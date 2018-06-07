@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>萤火虫</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			body,html{
+				width: 150%;
+				height: 150%;
+			}
+			#container{
+				width: 100%;
+				height: 100%;
+				background: url(../img/timg.jpg);
+			}
+			
+			img{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+			}
+		</style>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				var y_img = "<img src='../img/萤火虫.jpg'/>"
+				for(var i=0;i<50;i++)
+				{
+					$("#container").append($(y_img))
+				}
+				var imgs = document.getElementsByTagName("img")
+				for(var n = 0;n<imgs.length;n++){
+					
+					(function(n){
+						
+								setInterval(function(){
+								var width = Math.ceil(Math.random()*1600)
+								var height = Math.ceil(Math.random()*1000)
+								var s = Math.ceil(Math.random()*30)
+				//				var h = Math.ceil(Math.random()*50)
+//								console.log($("img:eq(n)"))
+								ss = "img:eq("+n+")"
+								$(ss).animate({left:width+'px',top:height+'px',width:s+"px",height:s+"px"},6000,"linear")
+//								console.log(n)
+//								console.log(s)
+								console.log(width,height,s,n)
+								},6000)
+						})(n)
+						
+						
+					
+					
+				}
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="container" class="cc">
+			
+			
+			
+		</div>
+	</body>
+</html>
+
+
+
